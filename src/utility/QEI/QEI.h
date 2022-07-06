@@ -186,7 +186,13 @@ public:
      */
     void reset(void);
 
-void setEncoding(Encoding t_encoding);
+    /**
+     * @brief Set the Encoding object
+     *
+     * @param t_encoding: double encoding QEI::X2_ENCODING, quadrature encoding QEI::X4_ENCODING
+     */
+    void setEncoding(Encoding t_encoding);
+
     /**
      * Read the state of the encoder.
      *
