@@ -3,7 +3,7 @@
 namespace machinecontrol
 {
     RTDClass temp_probes;
-#ifdef CORE_M7
+#ifdef CORE_CM7
     COMMClass comm_protocols;
 #endif
     AnalogInClass analog_in;

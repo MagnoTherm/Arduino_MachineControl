@@ -3,7 +3,7 @@
 
 #include "utility/MAX31865/MAX31865.h"
 #include "utility/THERMOCOUPLE/MAX31855.h"
-#ifdef CORE_M7
+#ifdef CORE_CM7
 #include <ArduinoRS485.h>
 #endif
 #include "utility/QEI/QEI.h"
@@ -78,9 +78,9 @@ namespace machinecontrol
 		mbed::DigitalOut rtd_th = mbed::DigitalOut(PC_15);
 	};
 
-#ifdef CORE_M7
 	extern RTDClass temp_probes;
 
+#ifdef CORE_CM7
 	static mbed::CAN _can(PB_8, PH_13);
 
 	/**
