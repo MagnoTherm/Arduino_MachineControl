@@ -172,7 +172,10 @@ void QEI::reset(void) {
     revolutions_ = 0;
 
 }
-
+void QEI::setEncoding(Encoding t_encoding)
+{
+    encoding=t_encoding;
+}
 int QEI::getCurrentState(void) {
 
     return currState_;
