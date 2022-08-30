@@ -395,22 +395,22 @@ namespace machinecontrol
 		 * @return enc_0 for index = 0, enc_1 for index = 1
 		 */
 		EncoderClass()
-			: enc_0{PJ_8, PH_12, PH_11, 0}, enc_1{PC_13, PI_7, PJ_10, 0} {};
+			: enc_0{PJ_8, PH_12, PH_11, 0} {}; //, enc_1{PC_13, PI_7, PJ_10, 0}
 
 		QEI &operator[](int index)
 		{
-			switch (index)
-			{
-			case 0:
-				return enc_0;
-			case 1:
-				return enc_1;
-			}
+			// switch (index)
+			// {
+			// case 0:
+			return enc_0;
+			// case 1:
+			// 	return enc_1;
+			// }
 		}
 
 	private:
 		QEI enc_0;
-		QEI enc_1;
+		// QEI enc_1;
 	};
 
 	extern EncoderClass encoders;

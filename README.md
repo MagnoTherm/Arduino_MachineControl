@@ -4,6 +4,9 @@ A fixed version of Portenta Machine Control Library which supports:
 
 1. multicore (M7 and M4)
 2. X4 Encoding
+## Notes
+The encoder[1] is no longer supported because it is used elsewhere.
+
 
 ## Arduino Library
 
