@@ -177,6 +177,18 @@ void QEI::reset(void)
 void QEI::setEncoding(Encoding t_encoding)
 {
     encoding_ = t_encoding;
+    channelA_.rise(mbed::callback(this, &QEI::encode));
+    channelA_.fall(mbed::callback(this, &QEI::encode));
+    // If we're using X4 encoding, then attach interrupts to channel B too.
+    if (encoding_ == X4_ENCODING)
+    {
+        channelB_.rise(mbed::callback(this, &QEI::encode));
+        channelB_.fall(mbed::callback(this, &QEI::encode));
+    }
+    else
+    {
+        channelB_.disable_irq();
+    }
 }
 int QEI::getCurrentState(void)
 {
